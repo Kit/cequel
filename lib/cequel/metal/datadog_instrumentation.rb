@@ -49,7 +49,7 @@ module Cequel
 
         Datadog::Tracing.trace("cassandra.query", service: "cassandra") do |span, trace|
           span.resource = statement_txt
-          span.span_type = "cequel"
+          span.type = "cequel"
           span.set_tag("component", "cassandra")
           span.set_tag("operation", "query")
           span.set_tag("span.kind", "client")
