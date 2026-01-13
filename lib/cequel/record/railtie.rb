@@ -26,8 +26,8 @@ module Cequel
           begin
             require 'new_relic/agent/datastores'
           rescue LoadError => e
-            Rails.logger.debug(
-              "New Relic not installed; skipping New Relic integration")
+            # Rails.logger.debug(
+            #   "New Relic not installed; skipping New Relic integration")
           else
             require 'cequel/metal/new_relic_instrumentation'
           end
